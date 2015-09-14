@@ -8,7 +8,6 @@ package smartCBR;
 import de.dfki.mycbr.core.DefaultCaseBase;
 import de.dfki.mycbr.core.Project;
 import de.dfki.mycbr.core.model.Concept;
-import de.dfki.mycbr.io.CSVImporter;
 
 /**
  *

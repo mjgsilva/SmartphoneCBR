@@ -7,7 +7,6 @@ package smartCBR;
 
 import de.dfki.mycbr.core.DefaultCaseBase;
 import de.dfki.mycbr.core.casebase.Instance;
-import de.dfki.mycbr.core.model.AttributeDesc;
 import de.dfki.mycbr.core.model.Concept;
 import de.dfki.mycbr.core.model.FloatDesc;
 import de.dfki.mycbr.core.model.IntegerDesc;
@@ -19,11 +18,7 @@ import de.dfki.mycbr.core.similarity.AmalgamationFct;
 import de.dfki.mycbr.core.similarity.Similarity;
 import de.dfki.mycbr.util.Pair;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *

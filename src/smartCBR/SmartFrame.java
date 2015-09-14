@@ -424,6 +424,7 @@ public class SmartFrame extends javax.swing.JFrame {
         }
         
         return valuesArray;
+        
     }
 
     private void applyQuery() {
