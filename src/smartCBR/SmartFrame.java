@@ -136,11 +136,11 @@ public class SmartFrame extends javax.swing.JFrame {
 
         jlDisplaySize.setText("Display Size");
 
-        jlRam.setText("RAM");
+        jlRam.setText("RAM (Mb)");
 
         jlCameraPx.setText("Camera (px)");
 
-        jlIntStorage.setText("Int. Storage");
+        jlIntStorage.setText("Int. Storage (Gb)");
 
         jlStylus.setText("Stylus");
 
@@ -150,9 +150,9 @@ public class SmartFrame extends javax.swing.JFrame {
 
         jcbSdCard.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jlTalkTime.setText("Talk Time");
+        jlTalkTime.setText("Talk Time (hrs)");
 
-        jlStandbyTime.setText("Standby Time");
+        jlStandbyTime.setText("Standby Time (hrs)");
 
         jlOS.setText("OS");
 
@@ -215,7 +215,7 @@ public class SmartFrame extends javax.swing.JFrame {
                                 .add(jpOptionsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                                     .add(jtPrice)
                                     .add(org.jdesktop.layout.GroupLayout.LEADING, jcbOS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 75, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 90, Short.MAX_VALUE)
                                 .add(jlVendor)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jcbVendor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
@@ -506,7 +506,7 @@ public class SmartFrame extends javax.swing.JFrame {
         }
         
         String result = queryManager.doQuery(OS, 
-                vendor, 
+                vendor,
                 sdCard, 
                 stylus, 
                 cpuFreq, 

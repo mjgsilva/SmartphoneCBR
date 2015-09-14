@@ -168,7 +168,7 @@
                                       <Component id="jtPrice" max="32767" attributes="0"/>
                                       <Component id="jcbOS" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                                  <EmptySpace pref="90" max="32767" attributes="0"/>
                                   <Component id="jlVendor" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jcbVendor" min="-2" pref="130" max="-2" attributes="0"/>
@@ -276,7 +276,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlRam">
           <Properties>
-            <Property name="text" type="java.lang.String" value="RAM"/>
+            <Property name="text" type="java.lang.String" value="RAM (Mb)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtRam">
@@ -290,7 +290,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlIntStorage">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Int. Storage"/>
+            <Property name="text" type="java.lang.String" value="Int. Storage (Gb)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtIntStorage">
@@ -333,12 +333,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlTalkTime">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Talk Time"/>
+            <Property name="text" type="java.lang.String" value="Talk Time (hrs)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jlStandbyTime">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Standby Time"/>
+            <Property name="text" type="java.lang.String" value="Standby Time (hrs)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtStandbyTime">
