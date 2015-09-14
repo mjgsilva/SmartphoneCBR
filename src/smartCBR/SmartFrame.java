@@ -30,6 +30,16 @@
 
 package smartCBR;
 
+import de.dfki.mycbr.core.model.AttributeDesc;
+import de.dfki.mycbr.core.model.SymbolDesc;
+import de.dfki.mycbr.core.similarity.AmalgamationFct;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 public class SmartFrame extends javax.swing.JFrame {
     
     /**
@@ -37,6 +47,12 @@ public class SmartFrame extends javax.swing.JFrame {
      */
     public SmartFrame() {
         initComponents();
+        
+        CBREngine cbr = new CBREngine();
+        List<AmalgamationFct> amalgamationFcts = cbr.getConcept().getAvailableAmalgamFcts();
+        HashMap<String, AttributeDesc> attributes = cbr.getConcept().getAllAttributeDescs();
+        fillComboBoxes(amalgamationFcts, attributes);
+        
     }
     
     /** This method is called from within the constructor to
@@ -49,7 +65,7 @@ public class SmartFrame extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jpProfile = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jcbProfile = new javax.swing.JComboBox();
         jpOptions = new javax.swing.JPanel();
         jlCpuCores = new javax.swing.JLabel();
         jtCpuCores = new javax.swing.JTextField();
@@ -96,13 +112,13 @@ public class SmartFrame extends javax.swing.JFrame {
             jpProfileLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jpProfileLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(jComboBox1, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jcbProfile, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpProfileLayout.setVerticalGroup(
             jpProfileLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jpProfileLayout.createSequentialGroup()
-                .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jcbProfile, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -328,15 +344,15 @@ public class SmartFrame extends javax.swing.JFrame {
             public void run() {
                 new SmartFrame().setVisible(true);
             }
-        });
+        });        
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnRetrieval;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jcbOS;
+    private javax.swing.JComboBox jcbProfile;
     private javax.swing.JComboBox jcbSdCard;
     private javax.swing.JComboBox jcbStylus;
     private javax.swing.JComboBox jcbVendor;
@@ -368,5 +384,44 @@ public class SmartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jtStandbyTime;
     private javax.swing.JTextField jtTalkTime;
     // End of variables declaration//GEN-END:variables
+  
+    private void fillComboBoxes(List<AmalgamationFct> amalgamationFcts, HashMap<String,AttributeDesc> attributes){
+        jcbProfile.setModel(new javax.swing.DefaultComboBoxModel(getAmalgamationFctsAsArray(amalgamationFcts)));
+        jcbStylus.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"Stylus")));
+        jcbSdCard.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"SDCard")));
+        jcbOS.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"OS")));
+        jcbVendor.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"Vendor")));
+
+    }
+    
+    private String[] getAmalgamationFctsAsArray(List<AmalgamationFct> amalgamationFcts) {
+        int size = amalgamationFcts.size();
+        String[] amalgationFctsAsArray = new String[size];
+        
+        for(int i=0; i<size; i++) {
+            amalgationFctsAsArray[i] = amalgamationFcts.get(i).getName();
+        }
+        return amalgationFctsAsArray;
+    }
+    
+    private String[] getAttributesAsArray(HashMap<String,AttributeDesc> attributes, String attrName) {
+        String[] valuesArray = null;
+        
+        for (Map.Entry<String, AttributeDesc> entry : attributes.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if(key.equals(attrName)) {
+                SymbolDesc symbol = (SymbolDesc)value;
+                List<String> values = new ArrayList<String>();
+                values.add("");
+                values.addAll(symbol.getAllowedValues());
+                valuesArray = Arrays.copyOf(values.toArray(),values.toArray().length,String[].class);
+            }
+        }
+        
+        return valuesArray;
+    }
     
 }
+
