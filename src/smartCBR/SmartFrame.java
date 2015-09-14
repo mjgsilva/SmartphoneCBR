@@ -36,11 +36,15 @@ import de.dfki.mycbr.core.similarity.AmalgamationFct;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 public class SmartFrame extends javax.swing.JFrame {
+    
+    CBREngine cbr;
+    QueryManager queryManager;
+    List<AmalgamationFct> amalgamationFcts;
+    HashMap<String, AttributeDesc> attributes;   
     
     /**
      * Creates new form ContactEditor
@@ -48,9 +52,10 @@ public class SmartFrame extends javax.swing.JFrame {
     public SmartFrame() {
         initComponents();
         
-        CBREngine cbr = new CBREngine();
-        List<AmalgamationFct> amalgamationFcts = cbr.getConcept().getAvailableAmalgamFcts();
-        HashMap<String, AttributeDesc> attributes = cbr.getConcept().getAllAttributeDescs();
+        cbr = new CBREngine();
+        queryManager = new QueryManager(cbr.getConcept(),cbr.getCaseBase());
+        amalgamationFcts = cbr.getConcept().getAvailableAmalgamFcts();
+        attributes = cbr.getConcept().getAllAttributeDescs();
         fillComboBoxes(amalgamationFcts, attributes);
         
     }
@@ -100,7 +105,7 @@ public class SmartFrame extends javax.swing.JFrame {
         btnRetrieval = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("E-mail Contacts");
+        setTitle("Smartphone CBR");
 
         jpProfile.setBorder(javax.swing.BorderFactory.createTitledBorder("Profile"));
         jpProfile.setToolTipText("");
@@ -274,6 +279,11 @@ public class SmartFrame extends javax.swing.JFrame {
         btnCancel.setText("Cancel");
 
         btnRetrieval.setLabel("Start Retrieval");
+        btnRetrieval.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetrievalActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -310,6 +320,10 @@ public class SmartFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRetrievalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrievalActionPerformed
+        applyQuery();
+    }//GEN-LAST:event_btnRetrievalActionPerformed
     
     /**
      * @param args the command line arguments
@@ -391,7 +405,6 @@ public class SmartFrame extends javax.swing.JFrame {
         jcbSdCard.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"SDCard")));
         jcbOS.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"OS")));
         jcbVendor.setModel(new javax.swing.DefaultComboBoxModel(getAttributesAsArray(attributes,"Vendor")));
-
     }
     
     private String[] getAmalgamationFctsAsArray(List<AmalgamationFct> amalgamationFcts) {
@@ -421,6 +434,104 @@ public class SmartFrame extends javax.swing.JFrame {
         }
         
         return valuesArray;
+    }
+
+    private void applyQuery() {
+        String OS, vendor, sdCard, stylus;
+        float cpuFreq, gpuGflops, displaySize, cameraPx;
+        int cpuCores, ram, intStorage, talkTime, standbyTime, price;
+        AmalgamationFct profile = null;
+        
+        OS = jcbOS.getSelectedItem().toString();
+        vendor = jcbVendor.getSelectedItem().toString();
+        sdCard = jcbSdCard.getSelectedItem().toString();
+        stylus = jcbStylus.getSelectedItem().toString();
+        
+        
+        try {
+            cpuFreq = Float.parseFloat(jtCpuFreq.getText());
+        } catch (NumberFormatException e) {
+            cpuFreq = 0f;
+        }
+        
+        try {
+            gpuGflops = Float.parseFloat(jtGpuGflops.getText());
+        } catch (NumberFormatException e) {
+            gpuGflops = 0f;
+        }
+        
+        try {
+            displaySize = Float.parseFloat(jtDisplaySize.getText());
+        } catch (NumberFormatException e) {
+            displaySize = 0f;
+        }
+        
+        try {
+            cameraPx = Float.parseFloat(jtCameraPx.getText());
+        } catch (NumberFormatException e) {
+            cameraPx = 0f;
+        }
+        
+        try {
+            cpuCores = Integer.parseInt(jtCpuCores.getText());
+        } catch (NumberFormatException e) {
+            cpuCores = 0;
+        }
+        
+        try {
+            ram = Integer.parseInt(jtRam.getText());
+        } catch (NumberFormatException e) {
+            ram = 0;
+        }
+        
+        try {
+            intStorage = Integer.parseInt(jtIntStorage.getText());
+        } catch (NumberFormatException e) {
+            intStorage = 0;
+        }
+        
+        try {
+            talkTime = Integer.parseInt(jtTalkTime.getText());
+        } catch (NumberFormatException e) {
+            talkTime = 0;
+        }
+                
+        try {
+            standbyTime = Integer.parseInt(jtStandbyTime.getText());
+        } catch (NumberFormatException e) {
+            standbyTime = 0;
+        }
+                        
+        try {
+            price = Integer.parseInt(jtPrice.getText());
+        } catch (NumberFormatException e) {
+            price = 0;
+        }
+        
+        for(AmalgamationFct it : amalgamationFcts) {
+            if(it.getName().equals(jcbProfile.getSelectedItem().toString())) {
+                profile = it;
+            }
+        }
+        
+        String result = queryManager.doQuery(OS, 
+                vendor, 
+                sdCard, 
+                stylus, 
+                cpuFreq, 
+                gpuGflops, 
+                displaySize, 
+                cameraPx,
+                cpuCores,
+                ram,
+                intStorage,
+                talkTime,
+                standbyTime,
+                price,
+                profile
+        );
+        jlResult.setText(result);
+
     }
     
 }

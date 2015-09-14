@@ -5,6 +5,7 @@
  */
 package smartCBR;
 
+import de.dfki.mycbr.core.DefaultCaseBase;
 import de.dfki.mycbr.core.Project;
 import de.dfki.mycbr.core.model.Concept;
 import de.dfki.mycbr.io.CSVImporter;
@@ -15,15 +16,13 @@ import de.dfki.mycbr.io.CSVImporter;
  */
 public class CBREngine {
     
-    private String basepath = System.getProperty("user.dir") + "/proj/";
-    private String csvFile = "smartp.csv";
-    private String projectName = "smartp.prj";
-    private String smartphoneCases = "CB_csvImport";
-    private String conceptName = "smartphone";
-    private String columnSep = ";";
+    private final String basepath = System.getProperty("user.dir") + "/proj/";
+    private final String projectName = "smartp.prj";
+    private final String smartphoneCases = "CB_csvImport";
+    private final String conceptName = "smartphone";
     private Project project;
     private Concept concept;
-    private CSVImporter csvImporter;
+    private DefaultCaseBase caseBase;
     
     public CBREngine() {
         createProject();
@@ -31,18 +30,10 @@ public class CBREngine {
     
     public void createProject() {
                 
-        try {
-    
+        try {    
             project = new Project(basepath+projectName);
             concept = project.getConceptByID(conceptName);
-            /*csvImporter = new CSVImporter(basepath+csvFile,concept); 
-            //CSV Importer operations
-            csvImporter.readData();
-            csvImporter.checkData();
-            csvImporter.addMissingValues();
-            csvImporter.addMissingDescriptions();
-            csvImporter.doImport(); */
-        
+            caseBase = (DefaultCaseBase)project.getCaseBases().get(smartphoneCases);
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -55,5 +46,9 @@ public class CBREngine {
    
    public String getConceptName() {
        return conceptName;
-   } 
+   }
+   
+   public DefaultCaseBase getCaseBase() {
+       return caseBase;
+   }
 }
