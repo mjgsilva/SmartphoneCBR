@@ -114,7 +114,7 @@ public class QueryManager {
         
         IntegerDesc sdIntStorage = (IntegerDesc) concept.getAllAttributeDescs().get("InternalStorage");
         try {
-            query.addAttribute(sdIntStorage, sdIntStorage.getAttribute(ram));
+            query.addAttribute(sdIntStorage, sdIntStorage.getAttribute(intStorage));
         } catch (ParseException e) {
             e.printStackTrace();
         }
