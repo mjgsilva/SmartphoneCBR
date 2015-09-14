@@ -136,7 +136,7 @@
       <fct name="Around" type="Integer" ltype="POLYNOMIAL_WITH" lparam="4.0" rtype="POLYNOMIAL_WITH" rparam="2.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
       <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
     </desc>
-    <amalgam name="ExtremeUser" type="EUCLIDEAN" active="false" >
+    <amalgam name="ExtremeUser" type="EUCLIDEAN" active="true" >
       <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
       <entry name="CameraPx" active="true" fct="Around" weight="2.0"/>
       <entry name="OS" active="true" fct="default function" weight="1.0"/>
@@ -173,22 +173,22 @@
       <entry name="RAM" active="true" fct="Around" weight="1.0"/>
     </amalgam>
     <amalgam name="Fanboy" type="EUCLIDEAN" active="false" >
-      <entry name="SDCard" active="true" fct="default function" weight="1"/>
-      <entry name="CameraPx" active="true" fct="Around" weight="1"/>
-      <entry name="OS" active="true" fct="default function" weight="1"/>
-      <entry name="GraphicsGlops" active="true" fct="Around" weight="1"/>
-      <entry name="Vendor" active="true" fct="default function" weight="100.0"/>
-      <entry name="StandbyTime" active="true" fct="default function" weight="1"/>
-      <entry name="Stylus" active="true" fct="default function" weight="1"/>
-      <entry name="TalkTime" active="true" fct="default function" weight="1"/>
-      <entry name="InternalStorage" active="true" fct="Around" weight="1"/>
-      <entry name="CPUFreq" active="true" fct="Around" weight="1"/>
-      <entry name="DisplaySize" active="true" fct="Around" weight="1"/>
-      <entry name="Price" active="true" fct="Around" weight="1"/>
-      <entry name="Model" active="false" fct="default function" weight="1"/>
-      <entry name="Id" active="false" fct="default function" weight="1"/>
-      <entry name="CPUCores" active="true" fct="Around" weight="1"/>
-      <entry name="RAM" active="true" fct="Around" weight="1"/>
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="Around" weight="1.0"/>
+      <entry name="OS" active="true" fct="default function" weight="15.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Around" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="50.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="1.0"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Around" weight="1.0"/>
+      <entry name="Price" active="true" fct="Around" weight="1.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
     </amalgam>
     <amalgam name="Gamer" type="EUCLIDEAN" active="false" >
       <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
@@ -244,7 +244,7 @@
       <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
       <entry name="RAM" active="true" fct="Around" weight="1.0"/>
     </amalgam>
-    <amalgam name="ExporadicUser" type="EUCLIDEAN" active="true" >
+    <amalgam name="ExporadicUser" type="EUCLIDEAN" active="false" >
       <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
       <entry name="CameraPx" active="true" fct="Around" weight="1.0"/>
       <entry name="OS" active="true" fct="default function" weight="1.0"/>
