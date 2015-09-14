@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project name="smartp" author="" >
+<exp obj="smartphone" type="Concept" >
+  <desc>
+          </desc>
+</exp>
+<exp obj="CPUCores" c="smartphone" type="AttributeDesc" >
+  <desc>
+          </desc>
+</exp>
+<exp obj="CPUFreq" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="RAM" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="Price" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="GraphicsGlops" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="OS" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="Vendor" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="Model" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="CameraPx" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="InternalStorage" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="DisplaySize" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="CameraRes" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="TalkTime" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="StandbyTime" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+<exp obj="SDCard" c="smartphone" type="AttributeDesc" >
+  <desc>
+&#10;        </desc>
+</exp>
+</Project>

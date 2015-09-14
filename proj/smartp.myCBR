@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project name="smartp" author="" >
+<svs>
+  <sv name="_unknown_"/>
+  <sv name="_undefined_"/>
+  <sv name="_others_"/>
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="_unknown_">
+</qsym>
+<qsym name="_undefined_">
+</qsym>
+<qsym name="_others_">
+</qsym>
+</fct>
+</svs>
+<model>
+  <concept name="smartphone">
+    <desc name="SDCard" type="Symbol" mult="false" >
+      <symbol value="No" />
+      <symbol value="Yes" />
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="No">
+</qsym>
+<qsym name="Yes">
+</qsym>
+</fct>
+    </desc>
+    <desc name="CameraPx" type="Float" min="2.0" max="41.0" mult="false" >
+      <fct name="Around" type="Float" ltype="POLYNOMIAL_WITH" lparam="19.5" rtype="POLYNOMIAL_WITH" rparam="2.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OS" type="Symbol" mult="false" >
+      <symbol value="iOS" />
+      <symbol value="Android" />
+      <symbol value="Tizen" />
+      <symbol value="WindowsPhone" />
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="iOS">
+</qsym>
+<qsym name="Android">
+</qsym>
+<qsym name="Tizen">
+</qsym>
+<qsym name="WindowsPhone">
+</qsym>
+</fct>
+    </desc>
+    <desc name="GraphicsGlops" type="Float" min="1.6" max="326.0" mult="false" >
+      <fct name="Max" type="Float" ltype="POLYNOMIAL_WITH" lparam="4.0" rtype="CONSTANT" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="Around" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="Vendor" type="Symbol" mult="false" >
+      <symbol value="Sony" />
+      <symbol value="Apple" />
+      <symbol value="HTC" />
+      <symbol value="Microsoft" />
+      <symbol value="Samsung" />
+      <symbol value="LG" />
+      <symbol value="Huawei" />
+      <symbol value="Motorola" />
+      <symbol value="Nokia" />
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="Sony">
+</qsym>
+<qsym name="Apple">
+</qsym>
+<qsym name="HTC">
+</qsym>
+<qsym name="Microsoft">
+</qsym>
+<qsym name="Samsung">
+</qsym>
+<qsym name="LG">
+</qsym>
+<qsym name="Huawei">
+</qsym>
+<qsym name="Motorola">
+</qsym>
+<qsym name="Nokia">
+</qsym>
+</fct>
+    </desc>
+    <desc name="StandbyTime" type="Integer" min="200" max="1071" mult="false" >
+      <fct name="Max" type="Integer" ltype="POLYNOMIAL_WITH" lparam="2.0" rtype="POLYNOMIAL_WITH" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="Stylus" type="Symbol" mult="false" >
+      <symbol value="No" />
+      <symbol value="Yes" />
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="No">
+</qsym>
+<qsym name="Yes">
+</qsym>
+</fct>
+    </desc>
+    <desc name="TalkTime" type="Integer" min="4" max="48" mult="false" >
+      <fct name="Max" type="Integer" ltype="POLYNOMIAL_WITH" lparam="3.0" rtype="POLYNOMIAL_WITH" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="InternalStorage" type="Integer" min="1" max="128" mult="false" >
+      <fct name="Around" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="CPUFreq" type="Float" min="0.8" max="2.7" mult="false" >
+      <fct name="Max" type="Float" ltype="POLYNOMIAL_WITH" lparam="3.0" rtype="CONSTANT" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="Around" type="Float" ltype="POLYNOMIAL_WITH" lparam="4.0" rtype="POLYNOMIAL_WITH" rparam="2.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="DisplaySize" type="Float" min="3.0" max="6.4" mult="false" >
+      <fct name="Max" type="Float" ltype="POLYNOMIAL_WITH" lparam="3.0" rtype="CONSTANT" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="Around" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="Price" type="Integer" min="50" max="980" mult="false" >
+      <fct name="Min" type="Integer" ltype="POLYNOMIAL_WITH" lparam="0.0" rtype="POLYNOMIAL_WITH" rparam="3.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="Max" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="Around" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="Model" type="String" mult="false" >
+      <fct name="default function" type="String" symm="true" config="EQUALITY" n="3" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="Id" type="Integer" min="1" max="308" mult="false" >
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="CPUCores" type="Integer" min="1" max="8" mult="false" >
+      <fct name="Min" type="Integer" ltype="POLYNOMIAL_WITH" lparam="0.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="Max" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="Around" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="RAM" type="Integer" min="256" max="4096" mult="false" >
+      <fct name="Max" type="Integer" ltype="POLYNOMIAL_WITH" lparam="3.0" rtype="CONSTANT" rparam="0.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="Around" type="Integer" ltype="POLYNOMIAL_WITH" lparam="4.0" rtype="POLYNOMIAL_WITH" rparam="2.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <amalgam name="ExtremeUser" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="Around" weight="2.0"/>
+      <entry name="OS" active="true" fct="default function" weight="1.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Max" weight="5.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="3.0"/>
+      <entry name="CPUFreq" active="true" fct="Max" weight="8.0"/>
+      <entry name="DisplaySize" active="true" fct="Max" weight="5.0"/>
+      <entry name="Price" active="true" fct="Max" weight="5.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Max" weight="15.0"/>
+      <entry name="RAM" active="true" fct="Max" weight="15.0"/>
+    </amalgam>
+    <amalgam name="Economic" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="default function" weight="1.0"/>
+      <entry name="OS" active="true" fct="default function" weight="1.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Around" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="1.0"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Around" weight="1.0"/>
+      <entry name="Price" active="true" fct="Min" weight="30.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
+    </amalgam>
+    <amalgam name="Fanboy" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="1"/>
+      <entry name="CameraPx" active="true" fct="Around" weight="1"/>
+      <entry name="OS" active="true" fct="default function" weight="1"/>
+      <entry name="GraphicsGlops" active="true" fct="Around" weight="1"/>
+      <entry name="Vendor" active="true" fct="default function" weight="100.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="1"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1"/>
+      <entry name="DisplaySize" active="true" fct="Around" weight="1"/>
+      <entry name="Price" active="true" fct="Around" weight="1"/>
+      <entry name="Model" active="false" fct="default function" weight="1"/>
+      <entry name="Id" active="false" fct="default function" weight="1"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1"/>
+      <entry name="RAM" active="true" fct="Around" weight="1"/>
+    </amalgam>
+    <amalgam name="Gamer" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="default function" weight="1.0"/>
+      <entry name="OS" active="true" fct="default function" weight="20.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Max" weight="50.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="default function" weight="1.0"/>
+      <entry name="CPUFreq" active="true" fct="Max" weight="5.0"/>
+      <entry name="DisplaySize" active="true" fct="default function" weight="1.0"/>
+      <entry name="Price" active="true" fct="default function" weight="1.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Max" weight="10.0"/>
+      <entry name="RAM" active="true" fct="Max" weight="10.0"/>
+    </amalgam>
+    <amalgam name="Music" type="WEIGHTED_SUM" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="3.0"/>
+      <entry name="CameraPx" active="true" fct="default function" weight="1.0"/>
+      <entry name="OS" active="true" fct="default function" weight="1.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Around" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="30.0"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Around" weight="1.0"/>
+      <entry name="Price" active="true" fct="Around" weight="1.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
+    </amalgam>
+    <amalgam name="Photographer" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="Around" weight="30.0"/>
+      <entry name="OS" active="true" fct="default function" weight="1.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Around" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="1.0"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Max" weight="2.0"/>
+      <entry name="Price" active="true" fct="default function" weight="1.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
+    </amalgam>
+    <amalgam name="ExporadicUser" type="EUCLIDEAN" active="true" >
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="Around" weight="1.0"/>
+      <entry name="OS" active="true" fct="default function" weight="1.0"/>
+      <entry name="GraphicsGlops" active="true" fct="Around" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="Max" weight="10.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="Max" weight="10.0"/>
+      <entry name="InternalStorage" active="true" fct="default function" weight="1.0"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Around" weight="1.0"/>
+      <entry name="Price" active="true" fct="Around" weight="3.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
+    </amalgam>
+    <amalgam name="Reader" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="2.0"/>
+      <entry name="CameraPx" active="true" fct="default function" weight="1.0"/>
+      <entry name="OS" active="true" fct="default function" weight="2.0"/>
+      <entry name="GraphicsGlops" active="true" fct="default function" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="1.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="Around" weight="10.0"/>
+      <entry name="CPUFreq" active="true" fct="Around" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Max" weight="20.0"/>
+      <entry name="Price" active="true" fct="default function" weight="1.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
+    </amalgam>
+    <amalgam name="Writer" type="EUCLIDEAN" active="false" >
+      <entry name="SDCard" active="true" fct="default function" weight="1.0"/>
+      <entry name="CameraPx" active="true" fct="default function" weight="1.0"/>
+      <entry name="OS" active="false" fct="default function" weight="10.0"/>
+      <entry name="GraphicsGlops" active="true" fct="default function" weight="1.0"/>
+      <entry name="Vendor" active="true" fct="default function" weight="1.0"/>
+      <entry name="StandbyTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="Stylus" active="true" fct="default function" weight="50.0"/>
+      <entry name="TalkTime" active="true" fct="default function" weight="1.0"/>
+      <entry name="InternalStorage" active="true" fct="default function" weight="1.0"/>
+      <entry name="CPUFreq" active="true" fct="default function" weight="1.0"/>
+      <entry name="DisplaySize" active="true" fct="Max" weight="20.0"/>
+      <entry name="Price" active="true" fct="default function" weight="1.0"/>
+      <entry name="Model" active="false" fct="default function" weight="1.0"/>
+      <entry name="Id" active="false" fct="default function" weight="1.0"/>
+      <entry name="CPUCores" active="true" fct="Around" weight="1.0"/>
+      <entry name="RAM" active="true" fct="Around" weight="1.0"/>
+    </amalgam>
+  </concept>
+</model>
+<hierarchy>
+  <fct name="default function" type="Taxonomy" mt="PARTNER_QUERY" r="REUSE" t="MAX" qconfig="INNER_NODES_ANY" cconfig="INNER_NODES_ANY" top="inheritanceDesc" sim="0.0" symm="true" >
+    <node name="smartphone" sim="1.0" parent="inheritanceDesc" />
+  </fct>
+</hierarchy>
+<cases no="308" cb="CB_csvImport"/>
+</Project>
